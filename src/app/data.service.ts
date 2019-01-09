@@ -1,3 +1,4 @@
+/* vu que les données sont centralisées dans le service on peut enlever les outputs dans les components */
 export class DataService {
   public characters = [
     {name: 'Luke Sky', side: ''},
