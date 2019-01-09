@@ -1,0 +1,14 @@
+<p>
+  cart-component works!
+</p>
+
+<input type="text" [(ngModel)]="newItem" >
+<button class="btn" (click)="onAddItem()" [ngClass]="{'btn-default': newItem === '',
+ 'btn-primary': newItem !== '' }"> Rajout d'item</button>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let item of items">
+    {{item}}
+  </li>
+
+</ul>
