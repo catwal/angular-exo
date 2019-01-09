@@ -1,5 +1,5 @@
     <li class="list-group-item">{{character.name}}</li>
     <div>
-     <button class="btn btn-primary">Light</button>
-     <button class="btn btn-danger">Dark</button>
+     <button class="btn btn-primary" (click)="onAssigned('light')">Light</button>
+     <button class="btn btn-danger" (click)="onAssigned('dark')">Dark</button>
   </div>

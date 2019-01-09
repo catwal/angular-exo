@@ -1,14 +1,14 @@
 <div>
-  <ul class="nav nav-pills nav-fill">
-    <li class="nav-item">
-      <a class="nav-link" (click)="onChoose('all')" style="cursor: pointer; color: green" >All</a>
+  <ul class="nav nav-tabs">
+    <li class="nav-item" >
+      <a class="nav-link" [ngClass]="{active: chosenList === 'all'}" (click)="onChoose('all')" style="cursor: pointer">All</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Light</a>
+      <a class="nav-link" [ngClass]="{active: chosenList === 'light'}" (click)="onChoose('light')" style="cursor: pointer">Light</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Dark</a>
+      <a class="nav-link" [ngClass]="{active: chosenList === 'light'}" (click)="onChoose('dark')" style="cursor: pointer">Dark</a>
     </li>
   </ul>
-  <app-list [characters]="getCharacters()"></app-list>
+  <app-list [characters]="getCharacters()" (sideAssigned)="onSideChosen($event)"></app-list>
 </div>

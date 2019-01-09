@@ -8,6 +8,7 @@ import { CartComponentComponent } from './cart-component/cart-component.componen
 import { TabsComponent } from './tabs/tabs.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { ItemComponent } from './item/item.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
