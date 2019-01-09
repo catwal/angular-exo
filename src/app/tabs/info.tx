@@ -1,0 +1,2 @@
+ng g c XXXX --spec false
+permet de ne pas avoir le fichier spec.ts pour faire les tests
