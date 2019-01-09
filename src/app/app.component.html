@@ -4,7 +4,12 @@
     Welcome to {{ title }}!
   </h1>
 <p>mon nom est {{name}}</p>
-<!--  $event est obligatoire quand on veut écouter 
+<!--  $event est obligatoire quand on veut écouter
 un evenement user   -->
   <input type="text" (input)="onUserInput($event)">
+<hr>
+<p>{{number}}</p>
+<!-- dans le angular.cli mettre bootsrap après style.css -->
+<button class="btn btn-primary" (click)="onNewNumber()"> Clicker pour afficher un nombre </button>
+
 
