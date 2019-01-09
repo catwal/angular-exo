@@ -9,6 +9,8 @@ import { TabsComponent } from './tabs/tabs.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { DataService } from './data.service';
+import { LogService } from './log.service';
+import { CreateComponent } from './create/create.component';
 
 
 @NgModule({
@@ -17,13 +19,14 @@ import { DataService } from './data.service';
     CartComponentComponent,
     TabsComponent,
     ListComponent,
-    ItemComponent
+    ItemComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService, LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

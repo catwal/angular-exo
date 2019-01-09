@@ -1,0 +1,14 @@
+<!-- # permet d'avoir accès à chaque infos du template -->
+<form (ngSubmit)="onSubmit(form)" #form="ngForm">
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" class="form-control" ngModel required>
+</div>
+<div class="form-group">
+  <label for="side">Side</label>
+  <select id="side" name="side" class="form-control" ngModel>
+    <option *ngFor="let option of availableSides" [value]="option.value">{{option.display}}</option>
+  </select>
+</div>
+<button class="btn btn-primary" type="submit">Ajout d'un personnage</button>
+</form>
