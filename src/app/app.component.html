@@ -1,30 +1,23 @@
-<!--The content below is only a placeholder and can be replaced.-->
-  <h1 style="text-align:center">
-    <!-- string intermolation c'est la propriété entre {{}} -->
-    Welcome to {{ title }}!
-  </h1>
-<p>mon nom est {{name}}</p>
-<!--  $event est obligatoire quand on veut écouter
-un evenement user   -->
-  <input type="text" (input)="onUserInput($event)">
-<hr>
-<p>{{number}}</p>
-<!-- dans le angular.cli mettre bootsrap après style.css -->
-<button class="btn btn-primary" (click)="onNewNumber()"> Cliquer pour afficher un nombre </button>
-<hr>
-<app-cart-component></app-cart-component>
 
-<hr>
-<div class="container">
+<div class="container-header">
   <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <app-header></app-header>
+      </div>
+    </div>
+    </div>
+
+<div class="container">
+  <!-- <div class="row">
       <div class="col-xs-12 col-sm-6">
         <app-create></app-create>
       </div>
     </div>
-    <hr>
+    <hr> -->
   <div class="row">
     <div class="col-xs-12">
-        <app-tabs></app-tabs>
+      <router-outlet></router-outlet>
+       <!--  <app-tabs></app-tabs> -->
     </div>
   </div>
 </div>

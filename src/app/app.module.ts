@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { CartComponentComponent } from './cart-component/cart-component.component';
@@ -11,7 +11,20 @@ import { ItemComponent } from './item/item.component';
 import { DataService } from './data.service';
 import { LogService } from './log.service';
 import { CreateComponent } from './create/create.component';
+import { HeaderComponent } from './header/header.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
+const routes = [
+  {path: '', component: DataBindingComponent},
+  {path: 'personnage', component: TabsComponent,
+  children: [
+    {path: '', redirectTo: 'all', pathMatch: 'full'},
+    { path: ':side', component: ListComponent }
+  ]},
+  {path: 'nouveau-perso', component: CreateComponent},
+  {path: '**', redirectTo: '/'}
+
+];
 
 @NgModule({
   declarations: [
@@ -20,11 +33,14 @@ import { CreateComponent } from './create/create.component';
     TabsComponent,
     ListComponent,
     ItemComponent,
-    CreateComponent
+    CreateComponent,
+    HeaderComponent,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [DataService, LogService],
   bootstrap: [AppComponent]
