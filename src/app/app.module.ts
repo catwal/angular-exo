@@ -14,7 +14,8 @@ import { CreateComponent } from './create/create.component';
 import { HeaderComponent } from './header/header.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { HttpModule } from '@angular/http';
-
+import {AppRoutingModule} from './app-routing.module';
+/*
 const routes = [
   {path: '', component: DataBindingComponent},
   {path: 'personnage', component: TabsComponent,
@@ -25,7 +26,7 @@ const routes = [
   {path: 'nouveau-perso', component: CreateComponent},
   {path: '**', redirectTo: '/'}
 
-];
+]; */
 
 @NgModule({
   declarations: [
@@ -41,8 +42,9 @@ const routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes),
-    HttpModule
+   // RouterModule.forRoot(routes),
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [DataService, LogService],
   bootstrap: [AppComponent]
