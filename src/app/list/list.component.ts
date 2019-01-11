@@ -19,7 +19,7 @@ public subscription;
   constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.fetchCharacters();
+   // this.dataService.fetchCharacters();
     this.activatedRoute.params.subscribe(
       (params) => {
         console.log(params);

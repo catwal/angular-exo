@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 /* import du package lodash pour utiliser JS package */
 // import 'lodash';
@@ -6,20 +6,26 @@ import { Component } from '@angular/core';
 
 /* après import @types/lodash */
 import {random} from 'lodash';
+import { DataService } from './data.service';
 /* decorateur*/
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  /* propriété avec = valeur assignée*/
-  title = 'Exercices Angular Basics';
-  name = 'Micheline';
+export class AppComponent implements OnInit {
+ /* propriété avec = valeur assignée*/
+ title = 'Exercices Angular Basics';
+ name = 'Micheline';
 
-  /* propriété avec : type assignée */
-  aNumber: number;
-  public number: number;
+ /* propriété avec : type assignée */
+ aNumber: number;
+ public number: number;
+  constructor(private dataService: DataService) {}
+
+ngOnInit() {
+  this.dataService.fetchCharacters();
+}
 
   /* méthode avec fonctions entre {} */
   onUserInput(event) {

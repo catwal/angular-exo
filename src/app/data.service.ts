@@ -2,7 +2,7 @@ import { LogService } from './log.service';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/map';
 /* vu que les données sont centralisées dans le service on peut enlever les outputs dans les components */
 @Injectable()
 export class DataService {
