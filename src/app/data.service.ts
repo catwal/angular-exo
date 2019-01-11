@@ -1,17 +1,19 @@
 import { LogService } from './log.service';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 /* vu que les données sont centralisées dans le service on peut enlever les outputs dans les components */
 @Injectable()
 export class DataService {
-
-constructor(private logService: LogService) {}
 
   public characters = [
     {name: 'Luke Sky', side: ''},
     {name: 'Dark Vador', side: ''},
     {name: 'winnie', side: ''},
     {name: 'gilbertte', side: ''}];
+    public charactersChanged = new Subject<void>();
+
+constructor(private logService: LogService) {}
 
     getCharacters(chosenList) {
       if (chosenList === 'all') {
@@ -27,6 +29,7 @@ constructor(private logService: LogService) {}
         return char.name === charInfo.name;
       });
         this.characters[pos].side = charInfo.side;
+        this.charactersChanged.next();
         this.logService.writeLog('le perso : ' + charInfo.name + ' a changé de côté pour : ' + charInfo.side);
     }
 
