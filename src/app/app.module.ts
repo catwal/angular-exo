@@ -13,6 +13,7 @@ import { LogService } from './log.service';
 import { CreateComponent } from './create/create.component';
 import { HeaderComponent } from './header/header.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { HttpModule } from '@angular/http';
 
 const routes = [
   {path: '', component: DataBindingComponent},
@@ -40,7 +41,8 @@ const routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpModule
   ],
   providers: [DataService, LogService],
   bootstrap: [AppComponent]
